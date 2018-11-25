@@ -16,6 +16,8 @@ class AppServiceProvider extends ServiceProvider
         if ( env('SESSION_SECURE_COOKIE', false) ) {
             \URL::forceScheme('https');
         }
+
+        \Schema::defaultStringLength(191);
     }
 
     /**

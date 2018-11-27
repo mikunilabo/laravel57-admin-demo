@@ -13,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ( env('SESSION_SECURE_COOKIE', false) ) {
+            \URL::forceScheme('https');
+        }
+
+        \Schema::defaultStringLength(191);
     }
 
     /**

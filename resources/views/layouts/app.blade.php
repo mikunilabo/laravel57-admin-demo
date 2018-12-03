@@ -93,5 +93,34 @@
             @yield('content')
         </main>
     </div>
+
+    <script type="text/javascript">
+        (function() {
+            	if (!('Notification' in window)) {
+                	alert('It is a browser not supporting the notification function.');
+            	} else {
+                Notification.requestPermission()
+                    .then((permission) => {
+                        if (permission == 'granted') {
+                            var notification = new Notification(
+                                "A new version of app is available",
+                                {
+                                    body: "Click to see what's new in v2.0.0",
+                                    icon: "{{ asset('vendor/telescope/favicon.ico') }}",
+                                    tag: '',
+                                    data: {
+                                      xxx: '<a href="' + "{{ config('app.url') }}" + '>' + "{{ config('app.url') }}" + '</a>'
+                                    }
+                                }
+                            );
+                        } else if (permission == 'denied') {
+                            alert('denied');
+                        } else if (permission == 'default') {
+                            alert('default');
+                        }
+                    });
+            }
+        })();
+    </script>
 </body>
 </html>

@@ -35,7 +35,7 @@ class UsersController extends Controller
     {
         $follower = $request->user();
 
-        if ($follower->id == $user->id) {
+        if ($follower->id === $user->id) {
             return back()->withError("You can't follow yourself");
         }
 

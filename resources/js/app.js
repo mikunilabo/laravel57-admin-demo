@@ -37,6 +37,11 @@ $(document).ready(function() {
         $.get('/notifications', function (data) {
             addNotifications(data, "#notifications");
         });
+
+        window.Echo.private(`App.User.${Laravel.userId}`)
+            .notification((notification) => {
+                addNotifications([notification], '#notifications');
+            });
     }
 });
 

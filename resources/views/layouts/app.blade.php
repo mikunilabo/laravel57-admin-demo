@@ -60,7 +60,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <i class="glyphicon glyphicon-bell"></i>notify
+                                    <i class="fa fa-bell"></i>notify
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
                                     <li class="dropdown-header">No notifications</li>

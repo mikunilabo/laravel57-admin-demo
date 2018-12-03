@@ -113,6 +113,7 @@
                                     }
                                 }
                             );
+                            setTimeout(notification.close.bind(notification), 5000);
                         } else if (permission == 'denied') {
                             alert('denied');
                         } else if (permission == 'default') {

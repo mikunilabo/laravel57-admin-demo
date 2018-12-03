@@ -9,15 +9,26 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
+
+    @auth
+        <script>
+            window.Laravel.userId = <?php echo auth()->user()->id; ?>
+        </script>
+    @endauth
 </head>
 <body>
     <div id="app">
@@ -48,6 +59,14 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <i class="fa fa-bell"></i>notify
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
+                                    <li class="dropdown-header">No notifications</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -74,5 +93,34 @@
             @yield('content')
         </main>
     </div>
+
+    <script type="text/javascript">
+        (function() {
+            	if (!('Notification' in window)) {
+                	alert('It is a browser not supporting the notification function.');
+            	} else {
+                Notification.requestPermission()
+                    .then((permission) => {
+                        if (permission == 'granted') {
+                            var notification = new Notification(
+                                "A new version of app is available",
+                                {
+                                    body: "Click to see what's new in v2.0.0",
+                                    icon: "{{ asset('vendor/telescope/favicon.ico') }}",
+                                    tag: '',
+                                    data: {
+                                      xxx: '<a href="' + "{{ config('app.url') }}" + '>' + "{{ config('app.url') }}" + '</a>'
+                                    }
+                                }
+                            );
+                        } else if (permission == 'denied') {
+                            alert('denied');
+                        } else if (permission == 'default') {
+                            alert('default');
+                        }
+                    });
+            }
+        })();
+    </script>
 </body>
 </html>

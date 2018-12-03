@@ -41,9 +41,25 @@ $(document).ready(function() {
         window.Echo.private(`App.User.${Laravel.userId}`)
             .notification((notification) => {
                 addNotifications([notification], '#notifications');
+//                console.log(notification);
+                notify(notification);
             });
     }
 });
+
+function notify(notification) {
+    if ("Notification" in window) {
+        	var permission = Notification.permission;
+
+        if (permission === "denied"/* || permission === "granted"*/) {
+          return;
+        }
+
+        Notification.requestPermission().then(function(notification) {
+            var notification = new Notification(makeNotification(notification));
+        });
+    }
+}
 
 function addNotifications(newNotifications, target) {
     notifications = _.concat(notifications, newNotifications);

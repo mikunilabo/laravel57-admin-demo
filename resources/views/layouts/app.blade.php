@@ -16,6 +16,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Favicon -->
+    @php $favicon = app()->isLocal() ? 'favicon.local.ico' : 'favicon.ico' @endphp
+    <link type="image/vnd.microsoft.icon" rel="shortcut icon" href="{{ asset('images/favicon') }}/{{ $favicon }}" />
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script>
@@ -106,7 +110,7 @@
                                 "A new version of app is available",
                                 {
                                     body: "Click to see what's new in v2.0.0",
-                                    icon: "{{ asset('vendor/telescope/favicon.ico') }}",
+                                    icon: "{{ asset('images/logo/mikunilabo.png') }}",
                                     tag: '',
                                     data: {
                                       xxx: '<a href="' + "{{ config('app.url') }}" + '>' + "{{ config('app.url') }}" + '</a>'

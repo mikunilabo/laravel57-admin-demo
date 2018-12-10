@@ -18,7 +18,10 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
     {
         $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
 
-//         Telescope::night();
+        $now = now();
+        if (! $now->between($now->copy()->setTime('07', '00'), $now->copy()->setTime('19', '00'))) {
+            Telescope::night();
+        }
 
         $this->hideSensitiveRequestDetails();
 

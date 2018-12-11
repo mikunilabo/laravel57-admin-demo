@@ -14,14 +14,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
     <!-- Favicon -->
     @php $favicon = app()->isLocal() ? 'favicon.local.ico' : 'favicon.ico' @endphp
     <link type="image/vnd.microsoft.icon" rel="shortcut icon" href="{{ asset('images/favicon') }}/{{ $favicon }}" />
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -98,6 +96,10 @@
         </main>
     </div>
 
+    <!-- Scripts -->
+    <script src="{{ asset(mix('js/manifest.js')) }}" defer></script>
+    <script src="{{ asset(mix('js/vendor.js')) }}" defer></script>
+    <script src="{{ asset(mix('js/app.js')) }}" defer></script>
     <script type="text/javascript">
         (function() {
             	if (!('Notification' in window)) {

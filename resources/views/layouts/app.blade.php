@@ -17,13 +17,10 @@
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
 
     <!-- Favicon -->
-    @php $favicon = app()->isLocal() ? 'favicon.local.ico' : 'favicon.ico' @endphp
-    <link type="image/vnd.microsoft.icon" rel="shortcut icon" href="{{ asset('images/favicon') }}/{{ $favicon }}" />
+    <link type="image/vnd.microsoft.icon" rel="shortcut icon" href="{{ asset(sprintf('images/favicon/%s', app()->isLocal() ? 'favicon.local.ico' : 'favicon.ico')) }}" />
 
     <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
+        window.Laravel = @json(['csrfToken' => csrf_token()]);
     </script>
 
     @auth

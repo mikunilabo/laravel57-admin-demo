@@ -23,8 +23,8 @@
         window.Laravel = @json(['csrfToken' => csrf_token()]);
     </script>
 </head>
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    <div id="app">
+<body id="app" class="app {{ request()->user() ? 'header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show' : 'flex-row align-items-center' }}">
+    @auth
         @include ('layouts.header')
 
         <div class="app-body">
@@ -34,7 +34,9 @@
         </div>
 
         @include ('layouts.footer')
-    </div>
+    @else
+        @yield('content')
+    @endauth
 
     <!-- Scripts -->
     <script src="{{ asset(mix('js/manifest.js')) }}" defer></script>

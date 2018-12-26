@@ -11,7 +11,8 @@
 |
 */
 
-Route::view('/', 'welcome');
+// Route::view('/', 'welcome');
+Route::view('/', 'coreui');
 
 Auth::routes(['verify' => true]);
 

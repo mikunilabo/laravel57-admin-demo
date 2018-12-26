@@ -12,8 +12,19 @@ const mix = require('laravel-mix');
  */
 
 // JS
-mix.js('resources/js/app.js', 'public/js')
-    .extract(['vue']);
+mix.js([
+	'resources/js/app.js',
+//	'resources/js/vendor/pace.js',
+], 'public/js')
+    .extract([
+        'jquery',
+        'bootstrap',
+        'perfect-scrollbar',
+        '@coreui/coreui',
+        'chart.js',
+        '@coreui/coreui-plugin-chartjs-custom-tooltips',
+        'vue',
+    	]);
 
 // CSS
 mix.sass('resources/sass/app.scss', 'public/css');

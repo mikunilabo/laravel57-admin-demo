@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
@@ -25,15 +25,25 @@
 </head>
 <body id="app" class="app {{ request()->user() ? 'header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show' : 'flex-row align-items-center' }}">
     @auth
-        @include ('layouts.header')
+        @section('header')
+            @include ('layouts.header')
+        @show
 
         <div class="app-body">
-            @include ('layouts.sidebar')
+            @section('sidebar')
+                @include ('layouts.sidebar')
+            @show
+
             @yield('content')
-            @include ('layouts.aside')
+
+            @section('aside')
+                @include ('layouts.aside')
+            @show
         </div>
 
-        @include ('layouts.footer')
+        @section('footer')
+            @include ('layouts.footer')
+        @show
     @else
         @yield('content')
     @endauth

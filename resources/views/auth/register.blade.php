@@ -62,12 +62,12 @@
               <div class="row">
                 <div class="col-6">
                   <button class="btn btn-block btn-facebook" type="button">
-                    <span>facebook</span>
+                    <span>Facebook</span>
                   </button>
                 </div>
                 <div class="col-6">
                   <button class="btn btn-block btn-twitter" type="button">
-                    <span>twitter</span>
+                    <span>Twitter</span>
                   </button>
                 </div>
               </div>

@@ -79,11 +79,18 @@
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">
           <i class="fa fa-shield"></i> Lock Account</a>
-        <a class="dropdown-item" href="#">
-          <i class="fa fa-lock"></i> Logout</a>
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+             document.getElementById('logout-form').submit();">
+          <i class="fa fa-lock"></i> {{ __('Logout') }}
+        </a>
       </div>
     </li>
   </ul>
+
+  <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none;">
+      @csrf
+  </form>
+
   <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
     <span class="navbar-toggler-icon"></span>
   </button>

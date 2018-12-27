@@ -65,9 +65,11 @@
           <strong>Settings</strong>
         </div>
         <a class="dropdown-item" href="#">
-          <i class="fa fa-user"></i> Profile</a>
+          <i class="fa fa-user"></i> Profile
+        </a>
         <a class="dropdown-item" href="#">
-          <i class="fa fa-wrench"></i> Settings</a>
+          <i class="fa fa-wrench"></i> Settings
+        </a>
         <a class="dropdown-item" href="#">
           <i class="fa fa-usd"></i> Payments
           <span class="badge badge-secondary">42</span>
@@ -78,9 +80,9 @@
         </a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">
-          <i class="fa fa-shield"></i> Lock Account</a>
-        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-             document.getElementById('logout-form').submit();">
+          <i class="fa fa-shield"></i> Lock Account
+        </a>
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); if (confirm('@lang("Do you want to log out?")')) document.getElementById('logout-form').submit(); return false;">
           <i class="fa fa-lock"></i> {{ __('Logout') }}
         </a>
       </div>

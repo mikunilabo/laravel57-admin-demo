@@ -23,26 +23,8 @@
         window.Laravel = @json(['csrfToken' => csrf_token()]);
     </script>
 </head>
-<body id="app" class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    @section('header')
-        @include ('layouts.header')
-    @show
-
-    <div class="app-body">
-        @section('sidebar')
-            @include ('layouts.sidebar')
-        @show
-
-        @yield('content')
-
-        @section('aside')
-            @include ('layouts.aside')
-        @show
-    </div>
-
-    @section('footer')
-        @include ('layouts.footer')
-    @show
+<body id="app" class="app flex-row align-items-center">
+    @yield('content')
 
     <!-- Scripts -->
     <script src="{{ asset(mix('js/manifest.js')) }}" defer></script>

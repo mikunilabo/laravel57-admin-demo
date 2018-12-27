@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.skeleton')
 
 @section('title', __('Sign In'))
 

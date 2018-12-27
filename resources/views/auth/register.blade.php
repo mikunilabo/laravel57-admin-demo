@@ -70,6 +70,9 @@
             <div class="card-footer p-4">
               <div class="row">
                 <div class="col-6">
+                  <button class="btn btn-block btn-google-plus" type="button">
+                    <i class="fa fa-google-plus"></i><span> Google</span>
+                  </button>
                   <button class="btn btn-block btn-facebook" type="button">
                     <i class="fa fa-facebook"></i><span> Facebook</span>
                   </button>
@@ -77,6 +80,9 @@
                 <div class="col-6">
                   <button class="btn btn-block btn-twitter" type="button">
                     <i class="fa fa-twitter"></i><span> Twitter</span>
+                  </button>
+                  <button class="btn btn-block btn-dark" type="button">
+                    <i class="fa fa-github"></i><span> GitHub</span>
                   </button>
                 </div>
               </div>

@@ -78,6 +78,26 @@
                     </div>
                   </div>
               </form>
+              <div class="card p-4">
+                  <div class="row">
+                    <div class="col-6">
+                      <button class="btn btn-block btn-google-plus" type="button">
+                        <i class="fa fa-google-plus"></i><span> Google</span>
+                      </button>
+                      <button class="btn btn-block btn-facebook" type="button">
+                        <i class="fa fa-facebook"></i><span> Facebook</span>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button class="btn btn-block btn-twitter" type="button">
+                        <i class="fa fa-twitter"></i><span> Twitter</span>
+                      </button>
+                      <button class="btn btn-block btn-dark" type="button">
+                        <i class="fa fa-github"></i><span> GitHub</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
               <div class="card-body text-center">

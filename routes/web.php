@@ -14,5 +14,6 @@
 Auth::routes(['verify' => true]);
 
 Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::view('/', 'home')->name('home');
+    Route::view('colors', 'home')->name('colors');
 });

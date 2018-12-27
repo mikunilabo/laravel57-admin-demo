@@ -1,10 +1,9 @@
 <footer class="app-footer">
   <div>
-    <a href="https://coreui.io">CoreUI</a>
-    <span>&copy; 2018 creativeLabs.</span>
+    <span>&copy; 2018 <a href="https://www.mikunilabo.com" target="_blank">MikuniLabo</a></span>
   </div>
   <div class="ml-auto">
-    <span>Powered by</span>
-    <a href="https://coreui.io">CoreUI</a>
+    <span>Designed by</span>
+    <a href="https://coreui.io" target="_blank">CoreUI</a>
   </div>
 </footer>

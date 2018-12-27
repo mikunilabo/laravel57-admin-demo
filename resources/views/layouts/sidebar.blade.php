@@ -2,7 +2,7 @@
     <nav class="sidebar-nav">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link {{ request()->route()->named('home') ? 'active' : '' }}" href="{{ route('home') }}">
             <i class="nav-icon icon-speedometer"></i> Dashboard
             <span class="badge badge-primary">NEW</span>
           </a>

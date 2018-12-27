@@ -9,6 +9,7 @@
 
     <div class="container-fluid">
       <div class="animated fadeIn">
+      @if (false)
         <div class="row">
           <div class="col-sm-6 col-lg-3">
             <div class="card text-white bg-primary">
@@ -93,6 +94,9 @@
           <!-- /.col-->
         </div>
         <!-- /.row-->
+        @endif
+
+        @if (false)
         <div class="card">
           <div class="card-body">
             <div class="row">
@@ -164,6 +168,8 @@
             </div>
           </div>
         </div>
+        @endif
+
         <!-- /.card-->
         <div class="row">
           <div class="col-sm-6 col-lg-3">

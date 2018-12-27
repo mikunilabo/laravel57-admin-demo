@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('Reset Password'))
+
 @section('content')
 <div class="container">
       <div class="row justify-content-center">
@@ -10,7 +12,7 @@
                 <input type="hidden" name="token" value="{{ $token }}">
 
                 <div class="card-body p-4">
-                  <h1>{{ __('Reset Password') }}</h1>
+                  <h1>@lang ('Reset Password')</h1>
                   <p class="text-muted">Please enter the e-mail of the account and the password to change.</p>
 
                   @if (session('status'))

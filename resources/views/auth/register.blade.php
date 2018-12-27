@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('Create your account'))
+
 @section('content')
     <div class="container">
       <div class="row justify-content-center">
@@ -8,8 +10,8 @@
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="card-body p-4">
-                  <h1>Register</h1>
-                  <p class="text-muted">Create your account</p>
+                  <h1>Sign Up</h1>
+                  <p class="text-muted">@lang ('Create your account')</p>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text">

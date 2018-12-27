@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('Sign In'))
+
 @section('content')
     <div class="container">
       <div class="row justify-content-center">
@@ -9,7 +11,7 @@
               <form action="{{ route('login') }}" method="POST">
                   @csrf
                   <div class="card-body">
-                    <h1>Login</h1>
+                    <h1>@lang ('Sign In')</h1>
                     <p class="text-muted">Sign In to your account</p>
 
                     @if (session('status'))

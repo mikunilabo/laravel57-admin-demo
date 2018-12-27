@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('Reset Password'))
+
 @section('content')
     <div class="container">
       <div class="row justify-content-center">
@@ -8,7 +10,7 @@
             <form action="{{ route('password.email') }}" method="POST">
                 @csrf
                 <div class="card-body p-4">
-                  <h1>{{ __('Reset Password') }}</h1>
+                  <h1>@lang ('Reset Password')</h1>
                   <p class="text-muted">{{ __('Please enter your registered e-mail address.') }}</p>
 
                   @if (session('status'))

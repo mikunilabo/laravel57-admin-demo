@@ -63,11 +63,16 @@
 
                     <div class="row">
                       <div class="col-6">
-                        <button class="btn btn-primary px-4" type="submit">Login</button>
+                        <button class="btn btn-outline-primary px-4" type="submit">Login</button>
                       </div>
                       <div class="col-6 text-right">
                         <a href="{{ route('password.request') }}">
                           <button class="btn btn-link px-0" type="button">Forgot password?</button>
+                        </a>
+                      </div>
+                      <div class="col-12 d-md-none mt-3">
+                        <a href="{{ route('register') }}">
+                          <button class="btn btn-link px-0" type="button">Do not have a account? Sign Up!</button>
                         </a>
                       </div>
                     </div>
@@ -80,7 +85,7 @@
                   <h2>Sign up</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <a href="{{ route('register') }}">
-                    <button class="btn btn-primary active mt-3" type="button">Register Now!</button>
+                    <button class="btn btn-success mt-3" type="button">Register Now!</button>
                   </a>
                 </div>
               </div>

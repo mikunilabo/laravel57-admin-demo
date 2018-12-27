@@ -30,7 +30,13 @@
                         </span>
                     @endif
                   </div>
-                  <button class="btn btn-block btn-warning" type="submit">{{ __('Submit') }}</button>
+                  <button class="btn btn-block btn-outline-warning" type="submit">{{ __('Submit') }}</button>
+
+                  <div class="mt-3">
+                    <a href="{{ route('login') }}">
+                      <button class="btn btn-block btn-link px-0" type="button">Back to sign in page.</button>
+                    </a>
+                  </div>
                 </div>
             </form>
           </div>

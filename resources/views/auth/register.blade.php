@@ -57,19 +57,26 @@
                     </div>
                     <input name="password_confirmation" type="password" value class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" placeholder="{{ __('Repeat password') }}" required />
                   </div>
-                  <button class="btn btn-block btn-success" type="submit">Create Account</button>
+
+                  <button class="btn btn-block btn-outline-success" type="submit">Create Account</button>
+
+                  <div>
+                    <a href="{{ route('login') }}">
+                      <button class="btn btn-block btn-link px-0 mt-3" type="button">Already have a account? Sign in!</button>
+                    </a>
+                  </div>
                 </div>
             </form>
             <div class="card-footer p-4">
               <div class="row">
                 <div class="col-6">
                   <button class="btn btn-block btn-facebook" type="button">
-                    <span>Facebook</span>
+                    <i class="fa fa-facebook"></i><span> Facebook</span>
                   </button>
                 </div>
                 <div class="col-6">
                   <button class="btn btn-block btn-twitter" type="button">
-                    <span>Twitter</span>
+                    <i class="fa fa-twitter"></i><span> Twitter</span>
                   </button>
                 </div>
               </div>

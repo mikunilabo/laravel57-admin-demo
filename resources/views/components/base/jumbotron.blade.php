@@ -1,0 +1,56 @@
+@extends('layouts.app')
+
+@section('title', 'Jumbotron')
+
+@section('content')
+  <main class="main">
+    @breadcrumb (['lists' => ['Components' => null, 'Base' => null, 'Jumbotron' => route('components.base.jumbotron')]])
+    @endbreadcrumb
+
+    <div class="container-fluid">
+      <div class="animated fadeIn">
+        <div class="row">
+          <div class="col-sm-12 col-xl-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fa fa-align-justify"></i> Jumbotron
+                <div class="card-header-actions">
+                  <a class="card-header-action" href="http://coreui.io/docs/components/bootstrap-jumbotron/" target="_blank">
+                    <small class="text-muted">docs</small>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="jumbotron">
+                  <h1 class="display-3">Hello, world!</h1>
+                  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <hr class="my-4">
+                  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                  <p class="lead">
+                    <button class="btn btn-primary btn-lg" type="button">Learn more</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-xl-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fa fa-align-justify"></i> Jumbotron
+                <small>fluid</small>
+              </div>
+              <div class="card-body">
+                <div class="jumbotron jumbotron-fluid">
+                  <div class="container">
+                    <h1 class="display-3">Fluid jumbotron</h1>
+                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+@endsection

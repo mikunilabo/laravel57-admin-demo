@@ -40,7 +40,6 @@ final class BladeServiceProvider extends ServiceProvider
         /**
          * Components
          */
-//         Blade::component('components.alert', 'alert');
-            Blade::component('components.breadcrumb', 'breadcrumb');
+        Blade::component('layouts.breadcrumb', 'breadcrumb');
     }
 }

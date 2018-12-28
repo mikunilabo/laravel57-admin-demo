@@ -37,4 +37,19 @@ Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
         Route::view(sprintf('%s.%s', $prefix, $name = 'tabs'), $name)->name($name);
         Route::view(sprintf('%s.%s', $prefix, $name = 'tooltips'), $name)->name($name);
     });
+
+    Route::prefix($prefix = 'pages')->name(sprintf('%s.', $prefix))->group(function () {
+        Route::view($name = 'login', sprintf('auth.%s', $name), ['demo' => true])->name($name);
+        Route::view($name = 'register', sprintf('auth.%s', $name), ['demo' => true])->name($name);
+
+        Route::prefix($prefix = 'password')->name(sprintf('%s.', $prefix))->group(function () {
+            Route::view($name = 'request', 'auth.passwords.email', ['demo' => true])->name($name);
+            Route::view($name = 'reset', 'auth.passwords.reset', ['demo' => true, 'token' => null])->name($name);
+        });
+
+        Route::prefix($prefix = 'errors')->name(sprintf('%s.', $prefix))->group(function () use ($prefix) {
+            Route::view($name = '404', sprintf('%s.%s', $prefix, $name), ['demo' => true])->name($name);
+            Route::view($name = '500', sprintf('%s.%s', $prefix, $name), ['demo' => true])->name($name);
+        });
+    });
 });

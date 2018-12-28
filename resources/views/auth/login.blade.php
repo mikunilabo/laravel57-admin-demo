@@ -63,7 +63,7 @@
 
                     <div class="row">
                       <div class="col-6">
-                        <button class="btn btn-outline-primary px-4" type="submit">Login</button>
+                        <button class="btn btn-outline-primary px-4" type="{{ empty($demo) ? 'submit' : 'button' }}">Login</button>
                       </div>
                       <div class="col-6 text-right">
                         <a href="{{ route('password.request') }}">

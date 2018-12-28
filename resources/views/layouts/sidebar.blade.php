@@ -170,23 +170,32 @@
             <i class="nav-icon icon-star"></i> Pages</a>
           <ul class="nav-dropdown-items">
             <li class="nav-item">
-              <a class="nav-link" href="login.html" target="_top">
+              <a class="nav-link" href="{{ route('pages.login') }}" target="_top">
                 <i class="nav-icon icon-star"></i> Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.html" target="_top">
+              <a class="nav-link" href="{{ route('pages.register') }}" target="_top">
                 <i class="nav-icon icon-star"></i> Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="404.html" target="_top">
+              <a class="nav-link" href="{{ route('pages.password.request') }}" target="_top">
+                <i class="nav-icon icon-star"></i> Password Request</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('pages.password.reset') }}" target="_top">
+                <i class="nav-icon icon-star"></i> Password Reset</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('pages.errors.404') }}" target="_top">
                 <i class="nav-icon icon-star"></i> Error 404</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="500.html" target="_top">
+              <a class="nav-link" href="{{ route('pages.errors.500') }}" target="_top">
                 <i class="nav-icon icon-star"></i> Error 500</a>
             </li>
           </ul>
         </li>
+{{--
         <li class="nav-item mt-auto">
           <a class="nav-link nav-link-success" href="https://coreui.io" target="_top">
             <i class="nav-icon icon-cloud-download"></i> Download CoreUI</a>
@@ -197,6 +206,7 @@
             <strong>PRO</strong>
           </a>
         </li>
+--}}
       </ul>
     </nav>
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>

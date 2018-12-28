@@ -54,7 +54,7 @@
                     <input name="password_confirmation" type="password" value class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" placeholder="{{ __('Repeat password') }}" required />
                   </div>
 
-                  <button class="btn btn-block btn-outline-danger" type="submit">Reset</button>
+                  <button class="btn btn-block btn-outline-danger" type="{{ empty($demo) ? 'submit' : 'button' }}">Reset</button>
 
                   <div class="mt-3">
                     <a href="{{ route('login') }}">

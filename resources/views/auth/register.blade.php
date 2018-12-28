@@ -58,7 +58,7 @@
                     <input name="password_confirmation" type="password" value class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" placeholder="{{ __('Repeat password') }}" required />
                   </div>
 
-                  <button class="btn btn-block btn-outline-success" type="submit">Create Account</button>
+                  <button class="btn btn-block btn-outline-success" type="{{ empty($demo) ? 'submit' : 'button' }}">Create Account</button>
 
                   <div>
                     <a href="{{ route('login') }}">

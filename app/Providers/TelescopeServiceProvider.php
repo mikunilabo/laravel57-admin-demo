@@ -16,6 +16,10 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
      */
     public function register()
     {
+        if (! config('telescope.enabled')) {
+            return;
+        }
+
         $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
 
         $now = now();

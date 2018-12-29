@@ -11,20 +11,27 @@ const mix = require('laravel-mix');
  |
  */
 
+// Custom settings
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            pace: 'pace-progress'
+        }
+    }
+});
+
 // JS
-mix.js([
-	'resources/js/app.js',
-//	'resources/js/vendor/pace.js',
-], 'public/js')
+mix.js('resources/js/app.js', 'public/js')
     .extract([
         'jquery',
+        'pace-progress',
         'bootstrap',
         'perfect-scrollbar',
         '@coreui/coreui',
         'chart.js',
         '@coreui/coreui-plugin-chartjs-custom-tooltips',
         'vue',
-    	]);
+        ]);
 
 // CSS
 mix.sass('resources/sass/app.scss', 'public/css');

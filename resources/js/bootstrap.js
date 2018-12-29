@@ -12,6 +12,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('pace-progress');
     require('perfect-scrollbar');
     require('@coreui/coreui');
     require('chart.js');

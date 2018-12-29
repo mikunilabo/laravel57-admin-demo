@@ -1,24 +1,14 @@
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
-//require('./vendor/coreui/coreui-plugin-chartjs-custom-tooltips');
 require('./vendor/coreui/main');
 
-window.Vue = require('vue');
+window.$('[data-toggle="tooltip"]').tooltip();
+window.$('[data-toggle="popover"]').popover();
+window.$('.popover-dismiss').popover({
+    trigger: 'focus'
+});
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-//Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
+window.$('.theme-color').each(function () {
+    var Color = $(this).css('backgroundColor');
+    window.$(this).parent().append("\n    <table class=\"w-100\">\n      <tr>\n        <td class=\"text-muted\">HEX:</td>\n        <td class=\"font-weight-bold\">" + rgbToHex(Color) + "</td>\n      </tr>\n      <tr>\n        <td class=\"text-muted\">RGB:</td>\n        <td class=\"font-weight-bold\">" + Color + "</td>\n      </tr>\n    </table>\n  ");
 });

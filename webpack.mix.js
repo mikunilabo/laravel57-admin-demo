@@ -24,14 +24,13 @@ mix.webpackConfig({
 mix.js('resources/js/app.js', 'public/js')
     .extract([
         'jquery',
-        'pace-progress',
         'bootstrap',
+        'pace-progress',
         'perfect-scrollbar',
         '@coreui/coreui',
         'chart.js',
-        '@coreui/coreui-plugin-chartjs-custom-tooltips',
         'vue',
-        ]);
+    ]);
 
 // CSS
 mix.sass('resources/sass/app.scss', 'public/css');

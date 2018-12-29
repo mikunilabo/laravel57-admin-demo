@@ -16,7 +16,6 @@ try {
     require('perfect-scrollbar');
     require('@coreui/coreui');
     require('chart.js');
-    require('@coreui/coreui-plugin-chartjs-custom-tooltips');
 } catch (e) {}
 
 /**
@@ -59,3 +58,16 @@ if (token) {
 //    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //    encrypted: true
 //});
+
+/**
+ * We will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+window.Vue = require('vue');
+
+//Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
+const app = new Vue({
+    el: '#app'
+});

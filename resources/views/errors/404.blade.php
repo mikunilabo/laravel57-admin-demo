@@ -1,6 +1,6 @@
 @extends('layouts.skeleton')
 
-@section('title', __('404 Not found.'))
+@section('title', __('404 Not found'))
 
 @section('content')
     <div class="container">

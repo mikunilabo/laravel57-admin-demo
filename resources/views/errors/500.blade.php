@@ -1,6 +1,6 @@
 @extends('layouts.skeleton')
 
-@section('title', __('500 Internal Server Error.'))
+@section('title', __('500 Internal Server Error'))
 
 @section('content')
     <div class="container">

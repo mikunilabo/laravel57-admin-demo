@@ -41,11 +41,3 @@
     </div>
   </main>
 @endsection
-
-@section('scripts')
-    @parent
-
-    <script type="text/javascript" defer>
-        $('[data-toggle="tooltip"]').tooltip();
-    </script>
-@endsection

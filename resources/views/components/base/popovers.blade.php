@@ -42,14 +42,3 @@
     </div>
   </main>
 @endsection
-
-@section('scripts')
-    @parent
-
-    <script type="text/javascript" defer>
-        $('[data-toggle="popover"]').popover();
-        $('.popover-dismiss').popover({
-            trigger: 'focus'
-        });
-    </script>
-@endsection

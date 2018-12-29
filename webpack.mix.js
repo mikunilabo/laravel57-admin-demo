@@ -29,7 +29,7 @@ mix.js('resources/js/app.js', 'public/js')
         'perfect-scrollbar',
         '@coreui/coreui',
         'chart.js',
-        'vue',
+//        'vue',
     ]);
 
 // CSS

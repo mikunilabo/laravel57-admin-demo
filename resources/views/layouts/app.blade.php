@@ -6,22 +6,20 @@
     @show
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    <div id="app">
-        @section('header')
-            @include ('layouts.header')
+    @section('header')
+        @include ('layouts.header')
+    @show
+
+    <div class="app-body">
+        @section('sidebar')
+            @include ('layouts.sidebar')
         @show
 
-        <div class="app-body">
-            @section('sidebar')
-                @include ('layouts.sidebar')
-            @show
+        @yield('content')
 
-            @yield('content')
-
-            @section('aside')
-                @include ('layouts.aside')
-            @show
-        </div>
+        @section('aside')
+            @include ('layouts.aside')
+        @show
     </div>
 
     @section('footer')

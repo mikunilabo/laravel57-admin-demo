@@ -110,7 +110,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">
+          <a class="nav-link" href="{{ route('components.charts') }}">
             <i class="nav-icon icon-pie-chart"></i> Charts</a>
         </li>
         <li class="nav-item nav-dropdown">
@@ -158,7 +158,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">
+          <a class="nav-link" href="{{ route('components.widgets') }}">
             <i class="nav-icon icon-calculator"></i> Widgets
             <span class="badge badge-primary">NEW</span>
           </a>

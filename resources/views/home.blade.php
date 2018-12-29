@@ -730,3 +730,9 @@
     </div>
   </main>
 @endsection
+
+@section('scripts')
+    @parent
+
+    <script type="text/javascript" src="{{ asset(mix('js/vendor/coreui/main.js')) }}" defer></script>
+@endsection

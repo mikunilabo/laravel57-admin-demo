@@ -135,8 +135,7 @@ function CustomTooltips(tooltipModel) {
 
 export default CustomTooltips
 
-/* eslint-disable object-shorthand */
-/* global Chart, CustomTooltips, getStyle, hexToRgba */
+/* global Chart, CustomTooltips, getStyle */
 import $ from 'jquery'
 
 /**
@@ -330,36 +329,20 @@ const cardChart4 = new Chart($('#card-chart4'), {
   }
 })
 
+// Random Numbers
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+
 // eslint-disable-next-line no-unused-vars
-const mainChart = new Chart($('#main-chart'), {
-  type: 'line',
+const sparklineChart1 = new Chart($('#sparkline-chart-1'), {
+  type: 'bar',
   data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
     datasets: [
       {
-        label: 'My First dataset',
-        backgroundColor: hexToRgba(getStyle('--info'), 10),
-        borderColor: getStyle('--info'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: [165, 180, 70, 69, 77, 57, 125, 165, 172, 91, 173, 138, 155, 89, 50, 161, 65, 163, 160, 103, 114, 185, 125, 196, 183, 64, 137, 95, 112, 175]
-      },
-      {
-        label: 'My Second dataset',
-        backgroundColor: 'transparent',
-        borderColor: getStyle('--success'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: [92, 97, 80, 100, 86, 97, 83, 98, 87, 98, 93, 83, 87, 98, 96, 84, 91, 97, 88, 86, 94, 86, 95, 91, 98, 91, 92, 80, 83, 82]
-      },
-      {
-        label: 'My Third dataset',
-        backgroundColor: 'transparent',
-        borderColor: getStyle('--danger'),
-        pointHoverBackgroundColor: '#fff',
+        backgroundColor: getStyle('--primary'),
+        borderColor: 'transparent',
         borderWidth: 1,
-        borderDash: [8, 5],
-        data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65]
+        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
       }
     ]
   },
@@ -370,32 +353,181 @@ const mainChart = new Chart($('#main-chart'), {
     },
     scales: {
       xAxes: [{
-        gridLines: {
-          drawOnChartArea: false
-        }
+        display: false
       }],
       yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          maxTicksLimit: 5,
-          stepSize: Math.ceil(250 / 5),
-          max: 250
-        }
+        display: false
+      }]
+    }
+  }
+})
+
+// eslint-disable-next-line no-unused-vars
+const sparklineChart2 = new Chart($('#sparkline-chart-2'), {
+  type: 'bar',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
+    datasets: [
+      {
+        backgroundColor: getStyle('--warning'),
+        borderColor: 'transparent',
+        borderWidth: 1,
+        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+      }
+    ]
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        display: false
+      }],
+      yAxes: [{
+        display: false
+      }]
+    }
+  }
+})
+
+// eslint-disable-next-line no-unused-vars
+const sparklineChart3 = new Chart($('#sparkline-chart-3'), {
+  type: 'bar',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
+    datasets: [
+      {
+        backgroundColor: getStyle('--success'),
+        borderColor: 'transparent',
+        borderWidth: 1,
+        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+      }
+    ]
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        display: false
+      }],
+      yAxes: [{
+        display: false
+      }]
+    }
+  }
+})
+
+// eslint-disable-next-line no-unused-vars
+const sparklineChart4 = new Chart($('#sparkline-chart-4'), {
+  type: 'line',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    datasets: [
+      {
+        backgroundColor: 'transparent',
+        borderColor: getStyle('--info'),
+        borderWidth: 2,
+        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+      }
+    ]
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        display: false
+      }],
+      yAxes: [{
+        display: false
       }]
     },
     elements: {
       point: {
-        radius: 0,
-        hitRadius: 10,
-        hoverRadius: 4,
-        hoverBorderWidth: 3
+        radius: 0
+      }
+    }
+  }
+})
+
+// eslint-disable-next-line no-unused-vars
+const sparklineChart5 = new Chart($('#sparkline-chart-5'), {
+  type: 'line',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    datasets: [
+      {
+        backgroundColor: 'transparent',
+        borderColor: getStyle('--success'),
+        borderWidth: 2,
+        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+      }
+    ]
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        display: false
+      }],
+      yAxes: [{
+        display: false
+      }]
+    },
+    elements: {
+      point: {
+        radius: 0
+      }
+    }
+  }
+})
+
+// eslint-disable-next-line no-unused-vars
+const sparklineChart6 = new Chart($('#sparkline-chart-6'), {
+  type: 'line',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    datasets: [
+      {
+        backgroundColor: 'transparent',
+        borderColor: getStyle('--danger'),
+        borderWidth: 2,
+        data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+      }
+    ]
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        display: false
+      }],
+      yAxes: [{
+        display: false
+      }]
+    },
+    elements: {
+      point: {
+        radius: 0
       }
     }
   }
 })
 
 const brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
-
 const brandBoxChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
@@ -426,7 +558,6 @@ const brandBoxChart1 = new Chart($('#social-box-chart-1'), {
   data: {
     labels: brandBoxChartLabels,
     datasets: [{
-      label: 'My First dataset',
       backgroundColor: 'rgba(255,255,255,.1)',
       borderColor: 'rgba(255,255,255,.55)',
       pointHoverBackgroundColor: '#fff',
@@ -443,7 +574,6 @@ const brandBoxChart2 = new Chart($('#social-box-chart-2'), {
   data: {
     labels: brandBoxChartLabels,
     datasets: [{
-      label: 'My First dataset',
       backgroundColor: 'rgba(255,255,255,.1)',
       borderColor: 'rgba(255,255,255,.55)',
       pointHoverBackgroundColor: '#fff',
@@ -460,7 +590,6 @@ const brandBoxChart3 = new Chart($('#social-box-chart-3'), {
   data: {
     labels: brandBoxChartLabels,
     datasets: [{
-      label: 'My First dataset',
       backgroundColor: 'rgba(255,255,255,.1)',
       borderColor: 'rgba(255,255,255,.55)',
       pointHoverBackgroundColor: '#fff',
@@ -477,7 +606,6 @@ const brandBoxChart4 = new Chart($('#social-box-chart-4'), {
   data: {
     labels: brandBoxChartLabels,
     datasets: [{
-      label: 'My First dataset',
       backgroundColor: 'rgba(255,255,255,.1)',
       borderColor: 'rgba(255,255,255,.55)',
       pointHoverBackgroundColor: '#fff',

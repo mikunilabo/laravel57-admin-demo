@@ -11,7 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-// Custom settings
+/**
+ * Custom settings
+ */
 mix.webpackConfig({
     resolve: {
         alias: {
@@ -20,7 +22,15 @@ mix.webpackConfig({
     }
 });
 
-// JS
+/**
+ * JS
+ */
+// The following modules unique to the coreui page are undefined function unless they are described
+// in the same file as the tooltip plugin, so build the combined file.
+mix.js('resources/js/vendor/coreui/main.js', 'public/js/vendor/coreui');
+mix.js('resources/js/vendor/coreui/charts.js', 'public/js/vendor/coreui');
+mix.js('resources/js/vendor/coreui/widgets.js', 'public/js/vendor/coreui');
+
 mix.js('resources/js/app.js', 'public/js')
     .extract([
         'jquery',
@@ -32,18 +42,26 @@ mix.js('resources/js/app.js', 'public/js')
 //        'vue',
     ]);
 
-// CSS
+/**
+ * CSS
+ */
 mix.sass('resources/sass/app.scss', 'public/css');
 
-// Source Maps
+/**
+ * Source Maps
+ */
 mix.sourceMaps();
 
-// Versioning
+/**
+ * Versioning
+ */
 if (mix.inProduction()) {
     mix.version();
 }
 
-// Hot reloading
+/**
+ * Hot reloading
+ */
 if (process.env.MIX_APP_URL) {
     mix.browserSync({
         proxy: process.env.MIX_APP_URL,
@@ -58,5 +76,7 @@ if (process.env.MIX_APP_URL) {
     });
 }
 
-// Browser Notifications
+/**
+ * Browser Notifications
+ */
 //mix.disableNotifications();

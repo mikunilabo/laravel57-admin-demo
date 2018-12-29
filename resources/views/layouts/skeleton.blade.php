@@ -5,7 +5,7 @@
         @include ('layouts.head')
     @show
 </head>
-<body id="app" class="app flex-row align-items-center">
+<body class="app flex-row align-items-center">
     @yield('content')
 
     @section('scripts')

@@ -5,21 +5,23 @@
         @include ('layouts.head')
     @show
 </head>
-<body id="app" class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    @section('header')
-        @include ('layouts.header')
-    @show
-
-    <div class="app-body">
-        @section('sidebar')
-            @include ('layouts.sidebar')
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <div id="app">
+        @section('header')
+            @include ('layouts.header')
         @show
 
-        @yield('content')
+        <div class="app-body">
+            @section('sidebar')
+                @include ('layouts.sidebar')
+            @show
 
-        @section('aside')
-            @include ('layouts.aside')
-        @show
+            @yield('content')
+
+            @section('aside')
+                @include ('layouts.aside')
+            @show
+        </div>
     </div>
 
     @section('footer')

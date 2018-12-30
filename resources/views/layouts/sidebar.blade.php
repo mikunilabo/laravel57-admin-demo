@@ -144,15 +144,15 @@
             <i class="nav-icon icon-bell"></i> Notifications</a>
           <ul class="nav-dropdown-items">
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.notifications.alerts') }}">
                 <i class="nav-icon icon-bell"></i> Alerts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
-                <i class="nav-icon icon-bell"></i> Badge</a>
+              <a class="nav-link" href="{{ route('components.notifications.badges') }}">
+                <i class="nav-icon icon-bell"></i> Badges</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.notifications.modals') }}">
                 <i class="nav-icon icon-bell"></i> Modals</a>
             </li>
           </ul>

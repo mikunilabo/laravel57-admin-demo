@@ -92,19 +92,19 @@
             <i class="nav-icon icon-cursor"></i> Buttons</a>
           <ul class="nav-dropdown-items">
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.buttons.buttons') }}">
                 <i class="nav-icon icon-cursor"></i> Buttons</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.buttons.button_group') }}">
                 <i class="nav-icon icon-cursor"></i> Buttons Group</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.buttons.dropdowns') }}">
                 <i class="nav-icon icon-cursor"></i> Dropdowns</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.buttons.brand_buttons') }}">
                 <i class="nav-icon icon-cursor"></i> Brand Buttons</a>
             </li>
           </ul>

@@ -50,8 +50,11 @@ Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
             Route::view($name = 'tooltips', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
         });
 
-        Route::prefix($prefix = 'buttons')->name(sprintf('%s.', $prefix))->group(function () use ($prefix) {
-            //
+        Route::prefix($prefix2 = 'buttons')->name(sprintf('%s.', $prefix2))->group(function () use ($prefix, $prefix2) {
+            Route::view($name = 'buttons', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
+            Route::view($name = 'button_group', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
+            Route::view($name = 'dropdowns', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
+            Route::view($name = 'brand_buttons', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
         });
 
         Route::prefix($prefix = 'icons')->name(sprintf('%s.', $prefix))->group(function () use ($prefix) {

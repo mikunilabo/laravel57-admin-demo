@@ -193,6 +193,10 @@
               <a class="nav-link" href="{{ route('extras.pages.errors.500') }}" target="_top">
                 <i class="nav-icon icon-star"></i> Error 500</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('extras.pages.blank') }}" target="_top">
+                <i class="nav-icon icon-star"></i> Blank</a>
+            </li>
           </ul>
         </li>
 {{--

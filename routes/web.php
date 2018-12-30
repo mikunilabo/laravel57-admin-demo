@@ -74,19 +74,20 @@ Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
     /**
      * Extras
      */
-    Route::prefix($prefix = 'extras')->name(sprintf('%s.', $prefix))->group(function () {
-        Route::prefix($prefix = 'pages')->name(sprintf('%s.', $prefix))->group(function () {
+    Route::prefix($prefix = 'extras')->name(sprintf('%s.', $prefix))->group(function () use ($prefix) {
+        Route::prefix($prefix2 = 'pages')->name(sprintf('%s.', $prefix2))->group(function () use ($prefix, $prefix2) {
             Route::view($name = 'login', sprintf('auth.%s', $name), ['demo' => true])->name($name);
             Route::view($name = 'register', sprintf('auth.%s', $name), ['demo' => true])->name($name);
+            Route::view($name = 'blank', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
 
-            Route::prefix($prefix = 'password')->name(sprintf('%s.', $prefix))->group(function () {
+            Route::prefix($prefix3 = 'password')->name(sprintf('%s.', $prefix3))->group(function () {
                 Route::view($name = 'request', 'auth.passwords.email', ['demo' => true])->name($name);
                 Route::view($name = 'reset', 'auth.passwords.reset', ['demo' => true, 'token' => null])->name($name);
             });
 
-            Route::prefix($prefix = 'errors')->name(sprintf('%s.', $prefix))->group(function () use ($prefix) {
-                Route::view($name = '404', sprintf('%s.%s', $prefix, $name), ['demo' => true])->name($name);
-                Route::view($name = '500', sprintf('%s.%s', $prefix, $name), ['demo' => true])->name($name);
+            Route::prefix($prefix3 = 'errors')->name(sprintf('%s.', $prefix3))->group(function () use ($prefix3) {
+                Route::view($name = '404', sprintf('%s.%s', $prefix3, $name), ['demo' => true])->name($name);
+                Route::view($name = '500', sprintf('%s.%s', $prefix3, $name), ['demo' => true])->name($name);
             });
         });
     });

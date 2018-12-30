@@ -33,7 +33,7 @@
                           </span>
                       @endif
                     </div>
-                    <div class="input-group mb-4">
+                    <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
                           <i class="icon-lock"></i>
@@ -47,19 +47,19 @@
                       @endif
                     </div>
 
-                    @if (false)
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                    <div class="row">
+                      <div class="col-2">
+                        <label class="switch switch-pill switch-outline-success">
+                          <input name="remember" type="checkbox" id="remember" class="switch-input" {{ old('remember') ? 'checked' : '' }} />
+                          <span class="switch-slider"></span>
+                        </label>
+                      </div>
+                      <div class="col-10">
+                        <label for="remember">
+                          <p class="text-muted">{{ __('Remember Me') }}</p>
+                        </label>
+                      </div>
+                    </div>
 
                     <div class="row">
                       <div class="col-6">

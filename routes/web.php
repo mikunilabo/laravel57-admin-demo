@@ -57,8 +57,11 @@ Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
             Route::view($name = 'brand_buttons', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
         });
 
-        Route::prefix($prefix = 'icons')->name(sprintf('%s.', $prefix))->group(function () use ($prefix) {
-            //
+        Route::prefix($prefix2 = 'icons')->name(sprintf('%s.', $prefix2))->group(function () use ($prefix, $prefix2) {
+            Route::view($name = 'coreui_icons', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
+            Route::view($name = 'flags', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
+            Route::view($name = 'font_awesome', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
+            Route::view($name = 'simple_line_icons', sprintf('%s.%s.%s', $prefix, $prefix2, $name))->name($name);
         });
 
         Route::prefix($prefix = 'notifications')->name(sprintf('%s.', $prefix))->group(function () use ($prefix) {

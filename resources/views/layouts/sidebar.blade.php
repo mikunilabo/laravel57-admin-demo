@@ -118,23 +118,23 @@
             <i class="nav-icon icon-star"></i> Icons</a>
           <ul class="nav-dropdown-items">
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.icons.coreui_icons') }}">
                 <i class="nav-icon icon-star"></i> CoreUI Icons
                 <span class="badge badge-success">NEW</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.icons.flags') }}">
                 <i class="nav-icon icon-star"></i> Flags</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.icons.font_awesome') }}">
                 <i class="nav-icon icon-star"></i> Font Awesome
                 <span class="badge badge-secondary">4.7</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">
+              <a class="nav-link" href="{{ route('components.icons.simple_line_icons') }}">
                 <i class="nav-icon icon-star"></i> Simple Line Icons</a>
             </li>
           </ul>

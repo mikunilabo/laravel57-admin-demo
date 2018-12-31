@@ -10,6 +10,11 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, 5)->create();
+        factory(User::class)->create([
+            'name' => 'GUEST',
+            'email' => config('app.demo_user'),
+            'email_verified_at' => now(),
+            'password' => bcrypt(config('app.demo_passwd')),
+        ]);
     }
 }

@@ -12,7 +12,10 @@
                   @csrf
                   <div class="card-body">
                     <h1>@lang ('Sign In')</h1>
-                    <p class="text-muted">Sign In to your account</p>
+                    <p class="text-muted mt-3 lead" style="cursor: pointer;" data-container="body" data-toggle="popover" data-html="true" data-placement="top" data-content="<mark>@lang ('user')</mark>: <code>{{ config('app.demo_user') }}</mark><br><mark>@lang ('password')</code>: <code>{{ config('app.demo_passwd') }}</code>">
+                        <i class="icons cui-magnifying-glass"></i>
+                        @lang ('Demo account information is here')
+                    </p>
 
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -26,7 +29,7 @@
                           <i class="icon-user"></i>
                         </span>
                       </div>
-                      <input name="email" type="email" value="{{ old('email', config('app.demo_user')) }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="E-Mail" required autofocus />
+                      <input name="email" type="email" value="{{ old('email') }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="E-Mail" required autofocus />
                       @if ($errors->has('email'))
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $errors->first('email') }}</strong>
@@ -39,7 +42,7 @@
                           <i class="icon-lock"></i>
                         </span>
                       </div>
-                      <input name="password" type="password" value="{{ config('app.demo_passwd') }}" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="Password" required />
+                      <input name="password" type="password" value="" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="Password" required />
                       @if ($errors->has('password'))
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $errors->first('password') }}</strong>
@@ -62,12 +65,12 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-6">
-                        <button class="btn btn-outline-primary px-4" type="{{ empty($demo) ? 'submit' : 'button' }}">Login</button>
+                      <div class="col-4">
+                        <button class="btn btn-outline-primary px-4" type="{{ empty($demo) ? 'submit' : 'button' }}">{{ __('Login') }}</button>
                       </div>
-                      <div class="col-6 text-right">
+                      <div class="col-8 text-right">
                         <a href="{{ route('password.request') }}">
-                          <button class="btn btn-link px-0" type="button">Forgot password?</button>
+                          <button class="btn btn-link px-0" type="button">{{ __('Forgot password?') }}</button>
                         </a>
                       </div>
                       <div class="col-12 d-md-none mt-3">

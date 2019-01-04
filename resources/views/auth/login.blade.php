@@ -42,7 +42,7 @@
                           <i class="icon-lock"></i>
                         </span>
                       </div>
-                      <input name="password" type="password" value="" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="Password" required />
+                      <input name="password" type="password" value="" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="@lang ('Password')" required />
                       @if ($errors->has('password'))
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $errors->first('password') }}</strong>

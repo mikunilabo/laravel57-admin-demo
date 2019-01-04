@@ -11,7 +11,8 @@
                 @csrf
                 <div class="card-body p-4">
                   <h1>@lang ('Reset Password')</h1>
-                  <p class="text-muted">{{ __('Please enter your registered e-mail address.') }}</p>
+                  <p class="text-muted">@lang ('Please enter your registered e-mail address.')</p>
+                  <p class="text-danger">@lang ('Because of the demo, reset mail will not be sent.')</p>
 
                   @if (session('status'))
                       <div class="alert alert-success" role="alert">
@@ -19,24 +20,20 @@
                       </div>
                   @endif
 
-                  <div class="input-group mb-3">
+                  <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">@</span>
                     </div>
-                    <input name="email" type="email" value="{{ old('email') }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="{{ __('E-Mail') }}" required autofocus />
+                    <input name="email" type="email" value="{{ old('email') }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="@lang ('E-Mail')" required autofocus />
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
                   </div>
-                  <button class="btn btn-block btn-outline-warning" type="{{ empty($demo) ? 'submit' : 'button' }}">{{ __('Submit') }}</button>
 
-                  <div class="mt-3">
-                    <a href="{{ route('login') }}">
-                      <button class="btn btn-block btn-link px-0" type="button">Back to sign in page.</button>
-                    </a>
-                  </div>
+                  <button class="btn btn-block btn-outline-warning mt-2" type="{{ empty($demo) ? 'submit' : 'button' }}">@lang ('Submit')</button>
+                  <a href="{{ route('login') }}" class="btn btn-block btn-link px-0">@lang ('Back to sign in page.')</a>
                 </div>
             </form>
           </div>

@@ -29,7 +29,7 @@
                           <i class="icon-user"></i>
                         </span>
                       </div>
-                      <input name="email" type="email" value="{{ old('email') }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="E-Mail" required autofocus />
+                      <input name="email" type="email" value="{{ old('email') }}" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="@lang ('E-Mail')" required autofocus />
                       @if ($errors->has('email'))
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $errors->first('email') }}</strong>
@@ -59,57 +59,49 @@
                       </div>
                       <div class="col-10">
                         <label for="remember">
-                          <p class="text-muted">{{ __('Remember Me') }}</p>
+                          <p class="text-muted">@lang ('Remember Me')</p>
                         </label>
                       </div>
                     </div>
 
                     <div class="row">
-                      <div class="col-4">
-                        <button class="btn btn-outline-primary px-4" type="{{ empty($demo) ? 'submit' : 'button' }}">{{ __('Login') }}</button>
+                      <div class="col-12">
+                        <button class="btn btn-block btn-outline-primary px-4" type="{{ empty($demo) ? 'submit' : 'button' }}">@lang ('Login')</button>
                       </div>
-                      <div class="col-8 text-right">
-                        <a href="{{ route('password.request') }}">
-                          <button class="btn btn-link px-0" type="button">{{ __('Forgot password?') }}</button>
-                        </a>
+                      <div class="col-12 mt-2">
+                        <a href="{{ route('password.request') }}" class="btn btn-link px-0">@lang ('Forgot password?')</a>
                       </div>
-                      <div class="col-12 d-md-none mt-3">
-                        <a href="{{ route('register') }}">
-                          <button class="btn btn-link px-0" type="button">Do not have a account? Sign Up!</button>
-                        </a>
+                      <div class="col-12 d-md-none">
+                        <a href="{{ route('register') }}" class="btn btn-link px-0">@lang ('Do not have a account? Sign Up!')</a>
                       </div>
                     </div>
                   </div>
               </form>
-              <div class="card p-4">
-                  <div class="row">
-                    <div class="col-6">
-                      <button class="btn btn-block btn-google-plus" type="button">
-                        <i class="fa fa-google-plus"></i><span> Google</span>
-                      </button>
-                      <button class="btn btn-block btn-facebook" type="button">
-                        <i class="fa fa-facebook"></i><span> Facebook</span>
-                      </button>
-                    </div>
-                    <div class="col-6">
-                      <button class="btn btn-block btn-twitter" type="button">
-                        <i class="fa fa-twitter"></i><span> Twitter</span>
-                      </button>
-                      <button class="btn btn-block btn-dark" type="button">
-                        <i class="fa fa-github"></i><span> GitHub</span>
-                      </button>
-                    </div>
+              <div class="row">
+                  <div class="col-6">
+                    <button class="btn btn-block btn-google-plus" type="button">
+                      <i class="fa fa-google-plus"></i><span> Google</span>
+                    </button>
+                    <button class="btn btn-block btn-facebook" type="button">
+                      <i class="fa fa-facebook"></i><span> Facebook</span>
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn btn-block btn-twitter" type="button">
+                      <i class="fa fa-twitter"></i><span> Twitter</span>
+                    </button>
+                    <button class="btn btn-block btn-dark" type="button">
+                      <i class="fa fa-github"></i><span> GitHub</span>
+                    </button>
                   </div>
                 </div>
             </div>
             <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
               <div class="card-body text-center">
                 <div>
-                  <h2>Sign up</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <a href="{{ route('register') }}">
-                    <button class="btn btn-success mt-3" type="button">Register Now!</button>
-                  </a>
+                  <h2>@lang ('Sign up')</h2>
+                  <p>TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText</p>
+                  <a href="{{ route('register') }}" class="btn btn-block btn-success">@lang ('Register Now!')</a>
                 </div>
               </div>
             </div>

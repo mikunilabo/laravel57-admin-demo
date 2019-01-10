@@ -4,6 +4,8 @@
     @section('head')
         @include ('layouts.head')
     @show
+
+    @include ('layouts.analytics')
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
     @section('header')

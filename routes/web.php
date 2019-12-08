@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes(['verify' => true]);
+Route::get($name = 'test', 'TestController')->name($name);
 
 Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
     Route::view('/', $name = 'home')->name($name);
@@ -92,3 +92,5 @@ Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
         });
     });
 });
+
+Auth::routes(['verify' => true]);

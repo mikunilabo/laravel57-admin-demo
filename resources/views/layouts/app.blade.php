@@ -28,6 +28,12 @@
         @include ('layouts.footer')
     @show
 
+    <div id="overlay">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+
     @section('scripts')
         @include ('layouts.scripts')
     @show

@@ -11,7 +11,12 @@
 |
 */
 
-Route::get($name = 'test', 'TestController')->name($name);
+Route::prefix($prefix = 'demo')->name(sprintf('%s.', $prefix))->group(function () {
+    Route::prefix($prefix = 'scraping')->name(sprintf('%s.', $prefix))->group(function () {
+        Route::get('/', 'ScrapingController@view')->name('index');
+        Route::get($name = 'download', 'ScrapingController@' . $name)->name($name);
+    });
+});
 
 Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
     Route::view('/', $name = 'home')->name($name);

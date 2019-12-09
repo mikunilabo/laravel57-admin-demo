@@ -55,7 +55,7 @@ return [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
             'channel' => null,// Override default
-            'username' => sprintf('%s Bot [%s]', env('APP_KANA_NAME'), env('APP_ENV')),
+            'username' => sprintf('%s Bot [%s]', env('APP_NAME'), env('APP_ENV')),
             'emoji' => ':boom:',
             'level' => 'error',
         ],

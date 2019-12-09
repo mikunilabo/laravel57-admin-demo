@@ -20,6 +20,7 @@ Route::prefix($prefix = 'demo')->name(sprintf('%s.', $prefix))->group(function (
 
 Route::prefix('/')->middleware(['auth'/* 'verified'*/])->group(function () {
     Route::view('/', $name = 'home')->name($name);
+    Route::view($name = 'abc', $name)->name($name);// TODO XXX for test
 
     /**
      * Theme

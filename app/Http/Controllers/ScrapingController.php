@@ -42,7 +42,21 @@ final class ScrapingController extends Controller
     {
         $this->fifa();
 
-//         $this->result
+        array_unshift($this->result, $this->keys);
+
+        $stream = fopen('php://temp', 'r+b');
+        foreach ($this->result as $row) {
+            fputcsv($stream, $row);
+        }
+        rewind($stream);
+
+        $csv = str_replace(PHP_EOL, "\r\n", stream_get_contents($stream));
+        $csv = mb_convert_encoding($csv, 'SJIS-win', 'UTF-8');
+
+        return response()->make($csv, 200, [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => "attachment; filename={$this->date->format('YmdHis')}_fifaranking.csv",
+        ]);
     }
 
     private function fifa()

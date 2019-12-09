@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header">最新FIFA男子ランキング（{{ $date->format('Y年m月d日更新') }}）</div>
+              <div class="card-header">最新FIFA男子ランキング（{{ $date->format('Y年m月d日発表') }}）</div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
